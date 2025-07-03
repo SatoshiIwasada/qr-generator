@@ -25,17 +25,14 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
-          cache-dependency-path: './qr-generator/package-lock.json'
       
       - name: Install dependencies
-        run: |
-          cd qr-generator
-          npm ci
+        run: npm ci
+        working-directory: ./qr-generator
       
       - name: Build
-        run: |
-          cd qr-generator
-          npm run build
+        run: npm run build
+        working-directory: ./qr-generator
       
       - name: Setup Pages
         uses: actions/configure-pages@v3
