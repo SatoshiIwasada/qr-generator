@@ -28,11 +28,9 @@ jobs:
       
       - name: Install dependencies
         run: npm ci
-        working-directory: ./qr-generator
       
       - name: Build
         run: npm run build
-        working-directory: ./qr-generator
       
       - name: Setup Pages
         uses: actions/configure-pages@v3
@@ -40,7 +38,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './qr-generator/dist'
+          path: './dist'
 
   deploy:
     environment:
